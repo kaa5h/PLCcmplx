@@ -16,7 +16,10 @@ An AI-powered web application that automatically matches business requirements t
 ### Prerequisites
 
 - Python 3.8 or higher
-- Anthropic API key (get one at https://console.anthropic.com/)
+- Anthropic API key with credits (https://console.anthropic.com/)
+  - ⚠️ **PAYMENT REQUIRED**: You must add a payment method and purchase credits
+  - Minimum credit purchase: $5 USD
+  - Credits don't expire
 
 ### Installation
 
@@ -134,6 +137,32 @@ plc-mapper/
 ├── requirements.txt      # Python dependencies
 └── README.md            # This file
 ```
+
+## API Costs
+
+**⚠️ This application requires a paid Anthropic API account.**
+
+### Cost Breakdown:
+- **Minimum deposit**: $5 USD (required to start)
+- **Per requirement analysis**: ~$0.01 to $0.05
+- **Example usage**:
+  - 10 requirements = ~$0.10 to $0.50
+  - 50 requirements = ~$0.50 to $2.50
+  - 100 requirements = ~$1.00 to $5.00
+
+### Token Pricing (Claude 3.5 Sonnet):
+- Input tokens: $3 per million tokens
+- Output tokens: $15 per million tokens
+- Typical analysis: 1,000-3,000 tokens per requirement
+
+### Getting Credits:
+1. Go to https://console.anthropic.com/
+2. Navigate to "Billing"
+3. Add payment method
+4. Purchase credits (minimum $5)
+5. Credits don't expire
+
+**Note**: You cannot use this tool without purchasing API credits.
 
 ## Common Industrial Abbreviations
 

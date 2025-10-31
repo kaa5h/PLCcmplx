@@ -51,16 +51,22 @@ business requirements, saving you hours of manual work.
    ✓ Python 3.8 or newer
      Download: https://www.python.org/downloads/
 
-   ✓ Anthropic API key (free to get!)
+   ✓ Anthropic API key + Payment Method (REQUIRED)
      Get it: https://console.anthropic.com/
+
+     ⚠️  IMPORTANT: This is NOT FREE
+     - You MUST add a credit card or payment method
+     - Minimum credit purchase: $5 USD
+     - Credits don't expire
 
      Steps to get API key:
      1. Go to console.anthropic.com
-     2. Sign up (free)
-     3. Click "API Keys"
-     4. Click "Create Key"
-     5. Copy the key (starts with "sk-ant-...")
-     6. Save it somewhere safe
+     2. Sign up for an account
+     3. Go to "Billing" and add payment method
+     4. Purchase credits (minimum $5)
+     5. Go to "API Keys" and click "Create Key"
+     6. Copy the key (starts with "sk-ant-...")
+     7. Save it somewhere safe
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -83,11 +89,23 @@ business requirements, saving you hours of manual work.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-💰 COST:
+💰 ACTUAL COSTS (Updated):
 
-   • API calls cost ~$0.01 to $0.05 each
-   • Anthropic gives free credits when you sign up
-   • You can try examples without spending anything
+   Per API Call (analyzing one requirement):
+   • ~$0.01 to $0.05 per requirement analyzed
+   • Example: 10 requirements = ~$0.10 to $0.50
+
+   Minimum to Get Started:
+   • You must purchase at least $5 in credits
+   • This gives you roughly 100-500 analyses
+   • Credits don't expire
+
+   Cost Breakdown:
+   • Input tokens: ~$3 per million tokens
+   • Output tokens: ~$15 per million tokens
+   • Typical analysis uses 1,000-3,000 tokens total
+
+   ⚠️  You cannot use this tool without paying for API access!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

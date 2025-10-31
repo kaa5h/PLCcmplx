@@ -2,7 +2,9 @@
 
 ## 📋 Prerequisites
 - [ ] Python 3.8+ installed
-- [ ] Anthropic API key (get from https://console.anthropic.com/)
+- [ ] Anthropic API key + Paid Credits (https://console.anthropic.com/)
+- [ ] ⚠️ **PAYMENT REQUIRED**: Minimum $5 credit purchase
+- [ ] Credit card or payment method added to Anthropic account
 
 ---
 
@@ -79,6 +81,19 @@ Go to: **http://localhost:5000**
 3. Review results with confidence scores
 4. Click **"✓ Accept"** on good matches
 5. Click **"Export as CSV"** to download results
+
+---
+
+## 💰 API Costs
+
+**⚠️ Paid API Required - NOT FREE**
+
+- **Minimum purchase**: $5 USD in credits
+- **Per analysis**: ~$0.01 to $0.05 per requirement
+- **Example**: 10 requirements = ~$0.10-$0.50
+- **Credits**: Never expire
+
+**You MUST purchase credits before the app will work!**
 
 ---
 

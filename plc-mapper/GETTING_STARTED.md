@@ -28,23 +28,39 @@ If not installed, Mac users can install via Homebrew or download from python.org
 
 ---
 
-## Step 2: Get Your Anthropic API Key
+## Step 2: Get Your Anthropic API Key (PAYMENT REQUIRED)
 
-The application needs an API key to use Claude AI. Here's how to get one:
+The application needs an API key to use Claude AI. **This requires a paid account.**
+
+### ⚠️ IMPORTANT: This is NOT FREE!
+
+You **must** add a payment method and purchase credits before you can use this tool.
+
+### Costs:
+- **Minimum purchase**: $5 USD in credits
+- **Per analysis**: ~$0.01 to $0.05 per requirement
+- **Example**: Analyzing 10 requirements costs approximately $0.10-$0.50
+- **Credits**: Don't expire, so you can use them over time
+
+### How to get your API key:
 
 1. **Go to Anthropic's website**: https://console.anthropic.com/
-2. **Sign up or log in**:
+2. **Sign up for an account**:
    - Click "Sign Up" if you don't have an account
-   - Use your email to create an account (it's free to start)
-3. **Get your API key**:
-   - Once logged in, you'll see a dashboard
+   - Use your email to create an account
+3. **Add payment method and purchase credits**:
+   - Click on "Billing" in the left menu
+   - Click "Add payment method"
+   - Add your credit card or payment information
+   - Purchase at least $5 in credits (minimum amount)
+4. **Create your API key**:
    - Click on "API Keys" in the menu
    - Click "Create Key" button
    - Give it a name like "PLC Mapper"
    - **IMPORTANT**: Copy the key that appears (it looks like `sk-ant-...`)
-   - Save it somewhere safe (like a text file) - you'll need it in Step 4
+   - Save it somewhere safe (like a text file) - you'll need it in Step 5
 
-**Note**: Anthropic gives you free credits to start. Check their pricing page for details.
+**Note**: Without purchasing credits, the API key will not work and the application will fail.
 
 ---
 
