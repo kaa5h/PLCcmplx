@@ -12,6 +12,12 @@ business requirements, saving you hours of manual work.
 📚 WHICH GUIDE SHOULD I READ?
 
    ┌─────────────────────────────────────────────────────────────┐
+   │ ⚠️  Concerned about costs or looking for free options?     │
+   │ → Read: COST_AND_ALTERNATIVES.md FIRST                      │
+   │   (Pricing details, ROI analysis, and free alternatives)    │
+   └─────────────────────────────────────────────────────────────┘
+
+   ┌─────────────────────────────────────────────────────────────┐
    │ Are you a beginner?                                         │
    │ → Read: GETTING_STARTED.md                                  │
    │   (Step-by-step guide with screenshots descriptions)        │
@@ -121,6 +127,7 @@ business requirements, saving you hours of manual work.
 📁 FILES IN THIS FOLDER:
 
    START_HERE.txt .................. This file
+   COST_AND_ALTERNATIVES.md ........ Pricing & free options
    GETTING_STARTED.md .............. Detailed beginner's guide
    QUICK_START_CHEAT_SHEET.md ...... Command reference
    README.md ....................... Technical documentation
