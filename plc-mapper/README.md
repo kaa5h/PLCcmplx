@@ -1,62 +1,55 @@
-# PLC Data Mapping Assistant
+# PLC Data Mapping Assistant - PROTOTYPE
 
-An AI-powered web application that automatically matches business requirements to PLC tag names, reducing manual mapping time from hours to minutes.
+> **🎯 This is a DEMO/PROTOTYPE version with simulated matching - No API keys or payment required!**
 
-## Features
+A web application that demonstrates automated matching of business requirements to PLC tag names using pattern recognition algorithms.
 
-- **AI-Powered Matching**: Uses Claude AI to intelligently match business requirements to PLC tags
-- **Confidence Scoring**: Each match includes a confidence score (0-100%) with detailed reasoning
-- **Alternative Suggestions**: View alternative matches when primary match isn't suitable
+## ✨ Features
+
+- **Pattern Matching**: Smart keyword and abbreviation matching
+- **Confidence Scoring**: Each match includes a confidence score (0-100%) with reasoning
+- **Alternative Suggestions**: View alternative matches when primary match isn't perfect
 - **Export Functionality**: Export validated mappings as CSV or YAML configuration files
-- **Sample Datasets**: Pre-loaded examples for quick testing
+- **Sample Datasets**: Pre-loaded examples for instant testing
 - **Clean UI**: Simple, intuitive interface built with Bootstrap
+- **No API Required**: Works completely offline with no external dependencies
 
-## Quick Start
+## 🚀 Quick Start (Super Simple!)
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- Anthropic API key with credits (https://console.anthropic.com/)
-  - ⚠️ **PAYMENT REQUIRED**: You must add a payment method and purchase credits
-  - Minimum credit purchase: $5 USD
-  - Credits don't expire
+- Python 3.8 or higher (that's it!)
 
-### Installation
+### Installation & Run
 
-1. Navigate to the project directory:
+1. **Navigate to the project directory:**
 ```bash
 cd plc-mapper
 ```
 
-2. Install dependencies:
+2. **Install dependencies (just Flask and PyYAML):**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Set your Anthropic API key as an environment variable:
-```bash
-export ANTHROPIC_API_KEY='your-api-key-here'
-```
-
-### Running the Application
-
-1. Start the Flask server:
+3. **Run the application:**
 ```bash
 python app.py
 ```
 
-2. Open your browser and navigate to:
+4. **Open your browser:**
 ```
 http://localhost:5000
 ```
 
-3. Try the examples by clicking "Example 1: Circuit Breaker" or "Example 2: Temperature Sensors"
+5. **Try it out:**
+   - Click "Example 1: Circuit Breaker"
+   - Click "Analyze Mappings"
+   - See the results!
 
-4. Click "Analyze Mappings" to see AI-powered matches
+That's it! No API keys, no payment, no complicated setup!
 
-5. Review results, accept matches, and export when ready
-
-## Usage
+## 📖 Usage
 
 ### Input Formats
 
@@ -87,86 +80,54 @@ Any relevant context, naming conventions, or manual excerpts
 
 ### Workflow
 
-1. **Input Data**: Paste your business requirements and PLC tags into the respective text areas
-2. **Add Context** (optional): Provide documentation or naming conventions for better matching
-3. **Analyze**: Click "Analyze Mappings" to run AI analysis
+1. **Input Data**: Paste your business requirements and PLC tags
+2. **Add Context** (optional): Provide documentation for better matching
+3. **Analyze**: Click "Analyze Mappings" to run pattern matching
 4. **Review**: Examine matches, confidence scores, and reasoning
 5. **Accept/Adjust**: Accept good matches or view alternatives
 6. **Export**: Download CSV or YAML configuration files
 
-## How It Works
+## 🔍 How It Works (Mock Algorithm)
 
-The application uses Claude AI (claude-3-5-sonnet-20241022) to analyze:
+The prototype uses a simple but effective pattern matching algorithm:
 
-- **Keyword Matching**: Exact matches and common industrial abbreviations
-  - I = Current, V = Voltage, T = Temperature, P = Power, Ph = Phase
-- **Industrial Patterns**: Prefixes, suffixes, camelCase, underscores
-- **Data Type Suitability**: Float for measurements, Boolean for status
-- **Value Reasonableness**: Current typically 0-100A, temperature ranges, etc.
-- **Pattern Recognition**: Similar prefixes suggest grouping (e.g., CP_Ph1_, CP_Ph2_)
+1. **Keyword Matching**: Direct word matches between requirements and tags
+2. **Abbreviation Recognition**: Knows common industrial abbreviations
+   - I = Current, V = Voltage, T = Temperature, P = Power, Ph = Phase
+3. **Number Matching**: Matches phase numbers (Phase1 → Ph1)
+4. **Data Type Checking**: Float for measurements, Boolean for status
+5. **Value Range Validation**: Checks if values are reasonable
+6. **Confidence Scoring**: Combines all factors into a 0-100% score
 
-## Export Formats
+## 📊 Sample Data Included
 
-### CSV Export
-```csv
-BusinessName, PLCTag, Address, DataType, CurrentValue, Confidence, Notes
-Phase1_Current, CP_Ph1_I, DB45.DBD10, Float, 23.4, 95%, Ph1 = Phase 1 | I = Current
-```
+### Example 1: Circuit Breaker Panel
+- 4 requirements (Phase currents + Total power)
+- 6 PLC tags with various patterns
+- Tests multi-phase matching
 
-### YAML Export
-```yaml
-mappings:
-  - business_name: "Phase1_Current"
-    plc_tag: "CP_Ph1_I"
-    address: "DB45.DBD10"
-    data_type: "float"
-    unit: "Amperes"
-    confidence: 95
-```
+### Example 2: Temperature Monitoring
+- 3 requirements (Ambient, Motor, Oil temps)
+- 5 PLC tags with different naming conventions
+- Tests abbreviation recognition
 
-## File Structure
+## 📁 Project Structure
 
 ```
 plc-mapper/
-├── app.py                 # Flask backend with API routes
+├── app.py                 # Flask backend with pattern matching
 ├── templates/
-│   └── index.html        # Main web interface
+│   └── index.html        # Web interface
 ├── static/
-│   ├── style.css         # Custom styling
-│   └── script.js         # Frontend logic and API calls
-├── requirements.txt      # Python dependencies
+│   ├── style.css         # Styling
+│   └── script.js         # Frontend logic
+├── requirements.txt      # Just Flask + PyYAML
 └── README.md            # This file
 ```
 
-## API Costs
+## 🎓 Common Industrial Abbreviations Recognized
 
-**⚠️ This application requires a paid Anthropic API account.**
-
-### Cost Breakdown:
-- **Minimum deposit**: $5 USD (required to start)
-- **Per requirement analysis**: ~$0.01 to $0.05
-- **Example usage**:
-  - 10 requirements = ~$0.10 to $0.50
-  - 50 requirements = ~$0.50 to $2.50
-  - 100 requirements = ~$1.00 to $5.00
-
-### Token Pricing (Claude 3.5 Sonnet):
-- Input tokens: $3 per million tokens
-- Output tokens: $15 per million tokens
-- Typical analysis: 1,000-3,000 tokens per requirement
-
-### Getting Credits:
-1. Go to https://console.anthropic.com/
-2. Navigate to "Billing"
-3. Add payment method
-4. Purchase credits (minimum $5)
-5. Credits don't expire
-
-**Note**: You cannot use this tool without purchasing API credits.
-
-## Common Industrial Abbreviations
-
-The AI recognizes these common abbreviations:
+The algorithm recognizes these common patterns:
 
 - **I** = Current (Amps)
 - **V** = Voltage (Volts)
@@ -177,40 +138,106 @@ The AI recognizes these common abbreviations:
 - **THM** = Thermal
 - **CP** = Circuit Panel
 - **DB** = Data Block
+- **Mtr/Mot** = Motor
+- **Lvl** = Level
+- **Spd** = Speed
 
-## Troubleshooting
+## ❓ Troubleshooting
 
-**Error: "ANTHROPIC_API_KEY environment variable is not set"**
-- Make sure you've exported your API key: `export ANTHROPIC_API_KEY='your-key'`
+**Port 5000 already in use?**
+- Edit `app.py` line 307, change `5000` to another port like `5001`
 
-**Error: "No valid requirements found"**
-- Check format: Each line should be `Name | Description`
-- Make sure there's at least one requirement
+**Dependencies won't install?**
+- Try: `python -m pip install -r requirements.txt`
+- Or: `pip3 install -r requirements.txt`
 
-**Error: "No valid PLC tags found"**
-- Check CSV format: `TagName, Address, DataType, CurrentValue`
-- Each line should have all 4 fields separated by commas
+**Can't access http://localhost:5000?**
+- Try: `http://127.0.0.1:5000`
+- Make sure Flask is still running in the terminal
 
-**Low confidence scores**
-- Add documentation context to provide more information
-- Check that PLC tag names follow recognizable patterns
-- Verify requirements are clearly described
+## 🆚 Prototype vs Production
 
-## Performance
+This is a **PROTOTYPE** to demonstrate the concept.
 
-- Handles 20+ requirements and 50+ PLC tags
-- Analysis typically completes in 10-30 seconds
-- Confidence scores of 80%+ on clear matches
-
-## Security Note
-
-This is a prototype application. For production use:
-- Add authentication
+**For production use, you would want to:**
+- Use real AI (like Claude, GPT-4, or local LLMs) for better matching
+- Add user authentication
+- Store mappings in a database
+- Add more sophisticated matching algorithms
 - Implement rate limiting
-- Store results in a database
-- Add input validation and sanitization
 - Use HTTPS
 
-## License
+**To upgrade to real AI:**
+- See `COST_AND_ALTERNATIVES.md` for options
+- Claude API, OpenAI API, or local LLMs
+- Better accuracy but requires API costs or powerful hardware
 
-This is a prototype application for demonstration purposes.
+## 💰 Cost
+
+**This prototype: $0** (completely free!)
+
+Just need Python installed. No API keys, no payment, no cloud services.
+
+## 🎯 Perfect For
+
+- **Demos & Presentations**: Show the concept without setup hassle
+- **Testing the Workflow**: See if this approach works for your needs
+- **Learning**: Understand how PLC tag matching could work
+- **Prototyping**: Build on this foundation for custom solutions
+- **Offline Use**: Works without internet connection
+
+## ⚡ Performance
+
+- Instant results (no API latency)
+- Handles 50+ requirements and 100+ PLC tags easily
+- Works on any computer that can run Python
+- No external dependencies or network calls
+
+## 🔧 Customization
+
+Want to improve the matching? Edit `app.py`:
+
+- Add more abbreviations to `ABBREVIATIONS` dictionary (line 11)
+- Adjust scoring weights in `calculate_match_score()` (line 67)
+- Add custom pattern recognition logic
+- Modify confidence thresholds
+
+## 📝 License
+
+This is a prototype/demo application for educational and demonstration purposes.
+
+## 🤝 Contributing
+
+This is a simple prototype. Feel free to:
+- Fork it
+- Improve the matching algorithm
+- Add new features
+- Share feedback
+
+## 🙋 FAQ
+
+**Q: Is this production-ready?**
+A: No, it's a prototype to demonstrate the concept.
+
+**Q: Can I use real AI instead?**
+A: Yes! See `COST_AND_ALTERNATIVES.md` for integration options.
+
+**Q: How accurate is the matching?**
+A: Decent for simple patterns, but real AI would be much better for complex cases.
+
+**Q: Can I customize it for my industry?**
+A: Absolutely! Edit the abbreviations and scoring logic in `app.py`.
+
+**Q: Does it save my data?**
+A: No, everything is in-memory. Refresh the page and it's gone.
+
+---
+
+**Ready to try it?**
+
+```bash
+pip install -r requirements.txt
+python app.py
+```
+
+Then open http://localhost:5000 and click "Example 1"!
