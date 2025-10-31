@@ -1,0 +1,125 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║           PLC DATA MAPPING ASSISTANT - START HERE!               ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Welcome! This is an AI tool that automatically matches PLC tags to
+business requirements, saving you hours of manual work.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 WHICH GUIDE SHOULD I READ?
+
+   ┌─────────────────────────────────────────────────────────────┐
+   │ Are you a beginner?                                         │
+   │ → Read: GETTING_STARTED.md                                  │
+   │   (Step-by-step guide with screenshots descriptions)        │
+   └─────────────────────────────────────────────────────────────┘
+
+   ┌─────────────────────────────────────────────────────────────┐
+   │ Need a quick reference?                                     │
+   │ → Read: QUICK_START_CHEAT_SHEET.md                          │
+   │   (One-page commands summary)                               │
+   └─────────────────────────────────────────────────────────────┘
+
+   ┌─────────────────────────────────────────────────────────────┐
+   │ Want technical details?                                     │
+   │ → Read: README.md                                           │
+   │   (Full documentation with API details)                     │
+   └─────────────────────────────────────────────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ FASTEST WAY TO START (2 minutes):
+
+   WINDOWS USERS:
+   1. Double-click: setup_and_run.bat
+   2. Follow the prompts
+   3. Open browser to: http://localhost:5000
+
+   MAC/LINUX USERS:
+   1. Open Terminal in this folder
+   2. Type: ./setup_and_run.sh
+   3. Follow the prompts
+   4. Open browser to: http://localhost:5000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 WHAT YOU NEED BEFORE STARTING:
+
+   ✓ Python 3.8 or newer
+     Download: https://www.python.org/downloads/
+
+   ✓ Anthropic API key (free to get!)
+     Get it: https://console.anthropic.com/
+
+     Steps to get API key:
+     1. Go to console.anthropic.com
+     2. Sign up (free)
+     3. Click "API Keys"
+     4. Click "Create Key"
+     5. Copy the key (starts with "sk-ant-...")
+     6. Save it somewhere safe
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 WHAT THIS TOOL DOES:
+
+   INPUT:
+   • Business requirements (what you need)
+   • PLC tag list (what you have)
+   • Optional documentation
+
+   PROCESS:
+   • AI analyzes and matches them
+   • Gives confidence scores (0-100%)
+   • Explains the reasoning
+
+   OUTPUT:
+   • Interactive results table
+   • Accept/reject matches
+   • Export to CSV or YAML
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💰 COST:
+
+   • API calls cost ~$0.01 to $0.05 each
+   • Anthropic gives free credits when you sign up
+   • You can try examples without spending anything
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ STUCK? NEED HELP?
+
+   1. Read GETTING_STARTED.md (most common issues covered)
+   2. Check the error message - it usually tells you what's wrong
+   3. Make sure your API key is correct
+   4. Try the examples first before your own data
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 FILES IN THIS FOLDER:
+
+   START_HERE.txt .................. This file
+   GETTING_STARTED.md .............. Detailed beginner's guide
+   QUICK_START_CHEAT_SHEET.md ...... Command reference
+   README.md ....................... Technical documentation
+
+   setup_and_run.bat ............... Auto-setup (Windows)
+   setup_and_run.sh ................ Auto-setup (Mac/Linux)
+   run.sh .......................... Quick run script
+
+   app.py .......................... Main application
+   requirements.txt ................ Dependencies list
+   templates/ ...................... Web interface files
+   static/ ......................... CSS and JavaScript
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ready? Open GETTING_STARTED.md and follow along!
+
+Or just run the setup script and let it guide you!
+
+Good luck! 🚀
