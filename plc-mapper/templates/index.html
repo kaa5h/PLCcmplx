@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLC Data Mapping Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="py-4 mb-4 border-bottom">
+            <h1 class="display-5">PLC Data Mapping Assistant</h1>
+            <p class="lead text-muted">AI-powered automatic matching of business requirements to PLC tag names</p>
+        </header>
+
+        <!-- Sample Data Buttons -->
+        <div class="row mb-3">
+            <div class="col-12">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-secondary" onclick="loadExample1()">
+                        Example 1: Circuit Breaker
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" onclick="loadExample2()">
+                        Example 2: Temperature Sensors
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" onclick="clearAll()">
+                        Clear All
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Section -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Business Requirements</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="small text-muted">Format: Name | Description (one per line)</p>
+                        <textarea id="requirementsInput" class="form-control font-monospace" rows="12"
+                            placeholder="Phase1_Current | Electrical current in Amps for phase 1&#10;Phase2_Current | Electrical current in Amps for phase 2&#10;Total_Power | Total power consumption in Kilowatts"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">PLC Tags</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="small text-muted">Format: TagName, Address, DataType, CurrentValue</p>
+                        <textarea id="plcTagsInput" class="form-control font-monospace" rows="12"
+                            placeholder="CP_Ph1_I, DB45.DBD10, Float, 23.4&#10;CP_Ph2_I, DB45.DBD14, Float, 24.1&#10;P_tot, DB45.DBD20, Float, 5.2"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Documentation (Optional)</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="small text-muted">Paste relevant manual excerpts or context</p>
+                        <textarea id="documentationInput" class="form-control font-monospace" rows="12"
+                            placeholder="Additional context about the PLC tags, naming conventions, or system documentation..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analyze Button -->
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <button id="analyzeBtn" class="btn btn-primary btn-lg px-5" onclick="analyzeMappings()">
+                    <span id="analyzeText">Analyze Mappings</span>
+                    <span id="analyzeSpinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Error Alert -->
+        <div id="errorAlert" class="alert alert-danger d-none" role="alert"></div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="d-none">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <h3>Mapping Results</h3>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="resultsTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Requirement</th>
+                                    <th>Best Match</th>
+                                    <th>Confidence</th>
+                                    <th>Tag Details</th>
+                                    <th>Evidence</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultsBody">
+                                <!-- Results will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export Buttons -->
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <button class="btn btn-success btn-lg me-3" onclick="exportMappings('csv')">
+                        Export as CSV
+                    </button>
+                    <button class="btn btn-info btn-lg" onclick="exportMappings('yaml')">
+                        Generate YAML Config
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
